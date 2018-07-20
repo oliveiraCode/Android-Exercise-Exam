@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 textViewRoll.setText(String.valueOf(randomValues()));
 
                 if (isColorSelected){
-                    checkIfColorIsCorrect(textViewRoll);
+                    checkIfZoneColorIsCorrect(textViewRoll);
                 } else {
                     checkIfNumberIsCorrect(Integer.valueOf(textViewRoll.getText().toString()));
                 }
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         return true;
     }
 
-    private void checkIfColorIsCorrect(TextView textViewRoll) {
+    private void checkIfZoneColorIsCorrect(TextView textViewRoll) {
 
         TextView textViewScore = findViewById(R.id.textViewScore);
         String colorRoll;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
 
         if (colorRoll.equals(colorSelected.toString())){
-            textViewScore.setText(String.valueOf(Integer.valueOf(textViewScore.getText().toString())+100));
+            textViewScore.setText(String.valueOf(Integer.valueOf(textViewScore.getText().toString())+10));
         } else {
             textViewScore.setText(String.valueOf(Integer.valueOf(textViewScore.getText().toString())-10));
         }
